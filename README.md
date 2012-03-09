@@ -29,7 +29,7 @@ To mark the class as disposable when required call `-mgsMakeDisposable `. This w
 			_ptr = malloc(1000);
 
 			// create work file
-			[[NSFileManager defaultManager] createFileAtPath:_path contents:nil attributes:nil]
+			[[NSFileManager defaultManager] createFileAtPath:_path contents:nil attributes:nil];
 		}
 
 		return self;
@@ -83,7 +83,7 @@ The class above could be utilised like so:
 	[mineToo mgsReleaseDisposable];
 
 	// the MyClass object will become collectable and
-	// -finalize will be sent.
+	// -finalize will be sent at some time.
 	mineToo = nil;
 
 ##Licence
