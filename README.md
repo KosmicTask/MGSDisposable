@@ -1,4 +1,4 @@
- ##MGSDisposable
+##MGSDisposable
 
 A Cocoa category to assist with resource disposal.
 
