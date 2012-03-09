@@ -61,6 +61,8 @@ To mark the class as disposable when required call `-mgsMakeDisposable `. This w
 
 The class above could be utilised like so:
 
+	#import "NSObject+MGSDisposable.h"
+
 	// define object - disposal count will be 1.
 	// our work file has been created.
 	MyClass *mine = [MyClass new];
