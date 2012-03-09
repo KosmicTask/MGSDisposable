@@ -1,10 +1,9 @@
 //
 //  NSObject+MGSDisposable.m
-//  KosmicTask
 //
-//  Created by Mitchell Jonathan on 09/03/2012.
-//  Copyright (c) 2012 Mugginsoft. All rights reserved.
-//
+//  Created by Jonathan Mitchell on 09/03/2012.
+//  
+//  Licence: MIT
 
 #import "NSObject+MGSDisposable.h"
 #import <objc/runtime.h>
