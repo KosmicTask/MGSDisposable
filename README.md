@@ -52,8 +52,12 @@ To mark the class as disposable when required call `-mgsMakeDisposable `. This w
 	- (void)finalize
 	{
 		// We can free our manually allocated memory block here.
-		// Attempting to delete our work file here would sometimes 
-		// likely result in a resurrection error
+		// Attempting to delete our work file here will sometimes 
+		// result in a resurrection error. Note that we should not
+		// call any of our category methods here as the
+		// associated object used to maintain our disposal state
+		// may have been already finalized.
+
 		free(_ptr);
 	}
 
