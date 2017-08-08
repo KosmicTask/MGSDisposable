@@ -124,7 +124,7 @@ NSString * const MGSAllowDisposaValue = @"Yes";
 
     // dispose when reference count == 1
     if (refCount == 1) {
-        [self mgsAssociateValue:MGSAllowDisposaValue withKey:MGSAllowDisposalKey];
+        [self mgsAssociateValue:MGSAllowDisposaValue withKey:(__bridge void *)(MGSAllowDisposalKey)];
         [self mgsDispose];
     } else {
         [self mgsAssociateValue:[NSNumber numberWithUnsignedInteger:--refCount] withKey:&mgsDisposableKey];
@@ -150,7 +150,7 @@ NSString * const MGSAllowDisposaValue = @"Yes";
     if ([self isMgsDisposedWithLogIfTrue]) return;
     
     // disposal is only valid when the allow disposal key is found
-    if (![self mgsAssociatedValueForKey:MGSAllowDisposalKey]) {
+    if (![self mgsAssociatedValueForKey:(__bridge void *)(MGSAllowDisposalKey)]) {
         NSLog(@"Disposal is not valid at this time.");
         return;
     }
@@ -159,7 +159,7 @@ NSString * const MGSAllowDisposaValue = @"Yes";
     [self mgsAssociateValue:[NSNumber numberWithUnsignedInteger:0] withKey:&mgsDisposableKey];
     
     // remove the allow disposal key
-    [self mgsAssociateValue:nil withKey:MGSAllowDisposalKey];
+    [self mgsAssociateValue:nil withKey:(__bridge void *)(MGSAllowDisposalKey)];
 }
 
 /*
